@@ -1,5 +1,6 @@
 const configure = require('./config')
-const Twit = require('twit')
+const Twit = require('twit');
+const { create } = require('domain');
 const T = new Twit(configure)
 
 const dateRef = {
@@ -67,8 +68,4 @@ function createPost(){
     })
 }
 
-const tweetTimer = (func) => {
-    func()
-    return setInterval(func, (1000*3600*24))}
-
-tweetTimer(createPost)
+createPost()
