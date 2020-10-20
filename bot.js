@@ -67,5 +67,9 @@ function createPost(){
         console.log(data)
     })
 }
+function tweetTimer(){
+    createPost()
+    setInterval(createPost, 86400000)
+}
 
-createPost()
+tweetTimer()
